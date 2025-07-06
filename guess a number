@@ -1,0 +1,21 @@
+start
+targetNumber = random number 1-100
+lowerBound = 1
+upperBound = 100
+found = false
+
+while found = false:
+  guessNumber = (upperBound + lowerBound) / 2
+  print "Is the number " + guessNumber + "!"
+    if targetNumber = guessNumber
+      print = "I found the number! It's " + guessNumber + "!"
+      found = true
+    else if guessNumber > targetNumber
+      print "Guess is too high"
+      upperBound = guessNumber - 1
+    else
+      print "Guess is too low"
+      lowerBound = guessNumber + 1
+    end if
+  end while
+end

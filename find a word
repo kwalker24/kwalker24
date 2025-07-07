@@ -1,0 +1,44 @@
+start
+targetWord = random English word
+lowerPage = first page of dictionary
+upperPage = last page of dictionary
+currentPage = middle of range (lowerBound page # + upperBound page #) / 2
+
+pageCorrect = false
+found = false
+
+look for correct page
+  while pageCorrect = false:
+    guess = first word on current page
+    if guess = targetWord
+      print "Word found! It's " + word
+      found = true
+    else if guess is after targetWord alphabetically
+      set upperBound = currentPage
+    else //guess is before targetWord alphabetically
+      lowerBoundPage = currentPage
+      guess = last word on currentPage
+        if guess = targetWord
+          print "Word found! It's " + word
+          found = true
+        else if guess is before targetWord
+          set lowerBoundPage = currentPage + 1
+     
+      lowerBoundWord = first word on page
+      upperBoundWord = last word on page
+        else // targetWord is between two guesses, on currentPage
+        pageCorrect = true
+          while pageCorrect = true & found = false
+            guess = word in middle of current page
+              if guess = targetWord
+                print "Word found! It's " + word
+                found = true
+              else if guess is after targetWord alphabetically
+                lowerBoundWord = guess
+              else // guess is before targetWord alphabetically
+                upperBoundWord = guess
+                end if
+            end while
+    end if
+  end while
+end

@@ -1,0 +1,33 @@
+The Dash Cell Phone Company charges customers a basic rate of $5 per month to send text messages. Additional rates are as follows:
+The first 100 messages per month, regardless of message length, are included in the basic bill.
+An additional three cents are charged for each text message after the 100th message, up to and including 300 messages.
+An additional two cents are charged for each text message after the 300th message.
+Federal, state, and local taxes add a total of 14 percent to each bill.
+
+Design a flowchart or pseudocode for the following:
+A program that accepts the following data about one customer’s messages: area code (three digits), phone number (seven digits), and number of text messages sent. Display all the data, including the month-end bill both before and after taxes are added.
+A program that continually accepts data about text messages until a sentinel value is entered and displays all the details.
+A program that continually accepts data about text messages until a sentinel value is entered and displays details only about customers who send more than 100 text messages.
+A program that continually accepts data about text messages until a sentinel value is entered and displays details only about customers whose total bill with taxes is over $10.
+A program that prompts the user for a three-digit area code from which to select bills. Then the program continually accepts text message data until a sentinel value is entered and displays data only for messages sent from the specified area code.
+
+start
+  baseRate = $5
+  messageRateMid = $0.03
+  messageLimitMid = 100
+  messageRateHigh = $0.02
+  messageLimitHigh = 300
+  taxRate = 0.14
+
+  if messagesSent <= 100 then
+    bill = baseRate
+  else if messagesSent <= 300 then
+    bill = baseRate + (messagesSent - 100) * messageRateMid
+  else
+    bill = baseRate + (200 * messageRateMid) + (messagesSent - 300) * messageRateHigh
+  endif
+
+  billWithTax = bill + (bill * taxRate)
+  output billWithTax
+end
+  
